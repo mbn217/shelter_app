@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Szczegóły</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/details.css}"/>
+    <link rel="stylesheet" href="/navbar.css">
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" th:href="@{/}">Hotel pod psem</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a th:href="@{/logout}">Wyloguj</a>
+                </li>
+                <li><a href="#" th:href="@{/}">Strona główna</a></li>
+                <li><a href="#" onclick="goBack()">Wróć</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wybór
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" th:href="@{/showAllAnimals/pies}">Psy</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/kot}">Koty</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/all}">Wszystkie</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" th:href="@{/addAnimal}"><span class="glyphicon glyphicon-plus"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="animal-cont" th:object="${animal}">
+    <img th:src="@{${animal.linkToImage}}" class="animals-image"/>
+    <div class="thumbnail">
+        <h1>Imię zwierzaka: </h1><strong th:text="${animal.getName()}"></strong>
+        <h2>Wiek zwierzaka:</h2>
+        <p th:text="${animal.getAge()}"></p>
+        <h2>Gatunek:</h2>
+        <p th:text="${animal.getSpecie()}"></p>
+        <h2>Rasa:</h2>
+        <p th:text="${animal.getRace()}"></p>
+        <h2>Płeć:</h2>
+        <p th:text="${animal.getSex()}"></p>
+        <h2>Zdrowie:</h2>
+        <p th:text="${animal.getHealth()}"></p>
+        <h2>Miasto:</h2>
+        <p th:text="${animal.getCity()}"></p>
+    </div>
+    <div class="description">
+        <h3>Opis:</h3><br>
+        <p th:text="${animal.getDescription()}"></p>
+    </div>
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ShelterApplication<shelter>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.ziola.shelter.ShelterApplication",
+      "projectName": "shelter",
+      "args": ""
+    }
+  ]
+}

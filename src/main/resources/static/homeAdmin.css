@@ -1,0 +1,5 @@
+.eachUser{
+    border: 2px solid red;
+    position: absolute;
+    margin: 20px 30px;
+}

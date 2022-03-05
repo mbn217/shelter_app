@@ -1,0 +1,62 @@
+.thumbnail {
+  padding: 70px 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+
+.thumbnail p {
+  margin-top: 15px;
+  color: #555;
+}
+
+/* Black buttons with extra padding and without rounded borders */
+.btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #f1f1f1;
+  border-radius: 0;
+  transition: .2s;
+}
+
+/* On hover, the color of .btn will transition to white with black text */
+.btn:hover,
+.btn:focus {
+  border: 1px solid #333;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Showing details of each selected animal */
+.animal-cont {
+  /*position: absolute;*/
+  margin: 50px auto;
+  /*left: 50%;*/
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  width: 500px;
+  border: solid 2px red;
+}
+
+.animal-cont img {
+  width: 100%;
+  border: 2px dotted black;
+}
+
+.animal-cont .thumbnail {
+  width: 70%;
+  margin: auto;
+  padding: 10px 0;
+}
+
+.animal-cont .description {
+  text-align: center;
+}
+
+.animal-cont .description h3 {
+  left: 50%;
+}
+
+.animal-cont .description p {
+  font-size: 16px;
+  padding: 5px 10px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Szczegóły</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/details.css}"/>
+    <link rel="stylesheet" th:href="@{/navbar.css}">
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" th:href="@{/}">Hotel pod psem</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a th:href="@{/logout}">Wyloguj</a>
+                </li>
+                <li><a href="#" th:href="@{/}">Strona główna</a></li>
+                <li><a href="#" onclick="goBack()">Wróć</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wybór
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" th:href="@{/showAllAnimals/pies}">Psy</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/kot}">Koty</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/all}">Wszystkie</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" th:href="@{/addAnimal}"><span class="glyphicon glyphicon-plus"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="animal-cont">
+    <!--    <img th:src="@{'/images/' + ${worker.name()} + ${worker.lastName()} + '.jpg'}"/>-->
+    <div class="thumbnail">
+        <form action="#" th:action="@{/editDetails/worker/processEditWorker}" method="post">
+            <input type="hidden" th:field="*{worker.id}"/>
+            <p>Imię: </p><input type="text" th:field="*{worker.name}"/>
+            <p>Nazwisko: </p><input th:field="*{worker.lastName}"/>
+            <p>Email:</p>
+            <input type="text" th:field="*{worker.email}"/>
+            <p>Rola:</p>
+            <input type="radio" th:field="*{worker.isAdmin}" th:value="1"/>Admin<br>
+            <input type="radio" th:field="*{worker.isAdmin}" th:value="0"/>User<br>
+            <p>Zbanować?</p>
+            <input type="radio" th:field="*{worker.active}" th:value="0"/>Tak<br>
+            <input type="radio" th:field="*{worker.active}" th:value="1"/>Nie<br>
+            <input type="submit" value="Zmień" th:class="acceptButton">
+        </form>
+    </div>
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+
+</html>
