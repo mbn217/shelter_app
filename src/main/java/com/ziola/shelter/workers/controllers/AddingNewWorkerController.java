@@ -17,12 +17,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class AddingNewWorkerController {
 
-    private AddingWorkerService addingWorkerService;
-
-    @Autowired
-    public AddingNewWorkerController(AddingWorkerService addingWorkerService) {
-        this.addingWorkerService = addingWorkerService;
-    }
+    private final AddingWorkerService addingWorkerService;
 
     @GetMapping("/addNewWorker")
     public String addNewWorker(@ModelAttribute("newWorker") Worker newWorker) {

@@ -5,31 +5,31 @@ import javax.validation.constraints.Size;
 
 public class AnimalDTO {
 
-  @Size(min = 2, max = 20, message = "{animal.domain.size.error}")
+  @Size(min = 2, max = 20)
   private String name;
 
-  @NotNull(message = "{animal.domain.null.error}")
+  @NotNull
   private int age;
 
-  @NotNull(message = "{animal.domain.null.specie}")
+  @NotNull
   private String specie;
 
-  @NotNull(message = "{animal.domain.null.error}")
-  @Size(min = 2, max = 150, message = "{animal.domain.null.size.description}")
+  @NotNull
+  @Size(min = 2, max = 150)
   private String description;
 
-  @NotNull(message = "{animal.domain.null.error}")
-  @Size(min = 2, max = 150, message = "{animal.domain.null.size.health}")
+  @NotNull
+  @Size(min = 2, max = 150)
   private String health;
 
-  @NotNull(message = "{animal.domain.null.error}")
-  @Size(min = 2, max = 150, message = "{animal.domain.null.size.health}")
+  @NotNull
+  @Size(min = 2, max = 150)
   private String race;
 
-  @NotNull(message = "{animal.domain.null.error}")
+  @NotNull
   private String sex;
 
-  @NotNull(message = "{animal.domain.null.error}")
+  @NotNull
   private String city;
 
   private String linkToImage;
