@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Schronisko dla zwierząt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myPage" th:href="@{/}">Hotel pod psem</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a th:href="@{/logout}" th:if="${#httpServletRequest.remoteUser}">Wyloguj</a>
+                </li>
+                <li><a href="#myPage">Główna</a></li>
+
+                <li>
+                    <a th:href="@{/login}" th:unless="${#httpServletRequest.remoteUser}">Logowanie</a>
+                </li>
+                <li>
+                    <a href="#" th:href="@{/registration}" th:unless="${#httpServletRequest.remoteUser}">Rejestracja</a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/home}" sec:authorize-url="/admin">Panel administratora</a>
+                </li>
+
+
+                <li><a href="#band">O nas</a></li>
+                <li><a href="#tour">Zwierzęta</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wybór
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" th:href="@{/showAllAnimals/pies}">Psy</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/kot}">Koty</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/all}">Wszystkie</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" th:href="@{/addAnimal}"><span class="glyphicon glyphicon-plus"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="1.jpg" alt="New York" width="1200" height="700">
+            <div class="carousel-caption">
+                <h3>Motywy</h3>
+                <p>Zawsze patrzymy przed siebie i nie boimy się nowych wyzwań</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="2.jpg" alt="Chicago" width="1200" height="700">
+            <div class="carousel-caption">
+                <h3>Troska</h3>
+                <p>Rozumiemy potrzeby psów i oczekiwania właścicieli</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="3.jpg" alt="Los Angeles" width="1200" height="700">
+            <div class="carousel-caption">
+                <h3>Czas</h3>
+                <p>Nie jest nam straszna żadna pogoda każdego dnia w roku</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Container (the crew and description) -->
+<div id="band" class="container text-center">
+    <h3>Hotel dla psów "Pod Psem"</h3>
+    <p><em>Kochamy psy!</em></p>
+    <p>Hotel dla psów "Pod Psem" w Katowicach to idealne rozwiązanie dla każdego, kto z powodu wyjazdu na wakacje,
+        choroby lub jakiegokolwiek innego powodu nie może zajmować się swoim pupilem.</p>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Tomasz Zioła</strong></p><br>
+            <a href="#demo" data-toggle="collapse">
+                <img src="person1.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo" class="collapse">
+                <p>Założyciel hotelu</p>
+                <p>Nic nie robi</p>
+                <p>W zarządzie od 2016 roku</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Piotr Kapusta</strong></p><br>
+            <a href="#demo2" data-toggle="collapse">
+                <img src="person2.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo2" class="collapse">
+                <p>Nocny pracownik</p>
+                <p>Dba o hotel, kiedy wszyscy inni śpią</p>
+                <p>W zarządzie od 2018 roku</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>Wojciech Sałata</strong></p><br>
+            <a href="#demo3" data-toggle="collapse">
+                <img src="person3.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+            </a>
+            <div id="demo3" class="collapse">
+                <p>Weterynarz</p>
+                <p>Zapewnia opiekę zdrowotną zwierzętom</p>
+                <p>W zarządzie od 2019 roku</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container (animals) -->
+<div id="tour" class="bg-1">
+    <div class="container">
+        <h3 class="text-center">Losowe zwierzęta:</h3>
+        <!-- <p class="text-center">XXXXXXXXX</p>
+        <ul class="list-group">
+          <li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
+          <li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
+          <li class="list-group-item">November <span class="badge">3</span></li>
+        </ul> -->
+
+        <div class="row text-center">
+            <!-- Add for each element of database -->
+            <div class="col-sm-4" th:each="randomAnimal : ${randomAnimals}">
+                <div class="thumbnail">
+                        <img th:src="@{${randomAnimal.linkToImage}}" class="animals-image" width="400" height="300"/>
+                    <p><strong th:text="${randomAnimal.getName()}"></strong></p>
+                    <p th:text="${randomAnimal.getAge()}"></p>
+                    <a href="" th:href="@{'/seeDetails/animal/' + ${randomAnimal.idOfAnimalThatImageBelongsTo}}">
+                        <button class="btn">Poznaj go</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container">
+    <h3 class="text-center">Npisz do nas</h3>
+    <p class="text-center"><em>Odpowiadamy na każdą wiadomość</em></p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="glyphicon glyphicon-map-marker"></span>Katowice</p>
+            <p><span class="glyphicon glyphicon-phone"></span>511 111 11</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>podpsem@gmail.com</p>
+        </div>
+        <div class="col-md-8">
+            <form action="#" th:action="@{/}" th:object="${newMessage}" method="post">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" th:field="*{name}" name="name" placeholder="Nazwisko"
+                               type="text"
+                               required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" th:field="*{email}" name="email" placeholder="Email"
+                               type="email"
+                               required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" th:field="*{message}" name="comments"
+                          placeholder="Wiadomość"
+                          rows="5"></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button class="btn pull-right" type="submit">Wyślij</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <h3 class="text-center">Nowości</h3>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">25.06.23r</a></li>
+        <li><a data-toggle="tab" href="#menu1">11.11.23r</a></li>
+        <li><a data-toggle="tab" href="#menu2">17.04.23r</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h2>Zamknięcie</h2>
+            <p>Tego dnia kończymy pracę o 16.</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h2>Spotkanie dla dzieci</h2>
+            <p>Organizujemy spotkanie ze zwierzakami dla dzieci. Szczegóły pod telefonem.</p>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h2>Promocja</h2>
+            <p>Promocyjna cena 15 zł za dobę</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <p>Tomasz Zioła <a href="https://github.com/" data-toggle="tooltip" title="Github">Mój
+        github</a></p>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    })
+</script>
+
+</body>
+
+</html>

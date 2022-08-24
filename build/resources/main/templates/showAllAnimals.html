@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Nasze koty</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/allAnimals.css">
+    <link rel="stylesheet" href="/navbar.css">
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" th:href="@{/}">Hotel pod psem</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a th:href="@{/logout}">Wyloguj</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Miasto
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li th:each="city : ${cities}"><a href="#"
+                                                          th:href="@{'/showAllAnimals/' + ${specie} + '/' + ${city}}"
+                                                          th:text="${city}">Miasto</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" th:href="@{/}">Strona główna</a></li>
+                <li><a href="#" onclick="goBack()">Wróć</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Wybór
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" th:href="@{/showAllAnimals/pies}">Psy</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/kot}">Koty</a></li>
+                        <li><a href="#" th:href="@{/showAllAnimals/all}">Wszystkie</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" th:href="@{/addAnimal}"><span class="glyphicon glyphicon-plus"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="row text-center">
+    <div class="empty-shelter flash" th:if="${#vars['emptyShelterFlash']}">
+        <h1 th:text="${#vars['emptyShelterFlash']}"></h1>
+    </div>
+    <div class="col-sm-4" th:each="animal : ${allAnimals}">
+        <div class="thumbnail">
+            <img th:src="@{${animal.linkToImage}}" class="animals-image"/>
+            <p>Imię zwierzaka: <strong th:text="${animal.name}"></strong></p>
+            <p th:text="${animal.age}"></p>
+            <a href="#" th:href="@{'/seeDetails/animal/'+ ${animal.idOfAnimalThatImageBelongsTo}}">
+                <button class="btn">Zobacz więcej</button>
+            </a>
+            <a href="#" th:href="@{'/editDetails/animal/'+ ${animal.idOfAnimalThatImageBelongsTo}}">
+                <button class="btn">Edytuj dane</button>
+            </a>
+            <a href="#" th:href="@{'/deleteAnimal/' + ${animal.idOfAnimalThatImageBelongsTo}}" sec:authorize-url="/admin">
+                <button class="btn">Usuń z bazy</button>
+            </a>
+        </div>
+    </div>
+</div>
+<div th:if="${#vars['catDeleted']}" class="animalDeletedFlash">
+    <h2 th:text="${#vars['catDeleted']}"></h2>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+    </div>
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+
+</html>

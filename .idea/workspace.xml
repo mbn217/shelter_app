@@ -4,43 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4dee79f-ee06-42de-a1fd-6322dfdb27f2" name="Changes" comment="migrated to java 18, updated all dependencies and gradle">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4/gc.properties" beforeDir="false" />
+    <list default="true" id="a4dee79f-ee06-42de-a1fd-6322dfdb27f2" name="Changes" comment="added LOMBOK annotations, removed adding users/roles but added sql script instead">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/controllers/AddAnimalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/controllers/AddAnimalsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/controllers/AnimalRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/domain/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/domain/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/dto/AnimalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/dto/AnimalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/aws/AwsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/aws/AwsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/aws/domain/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/aws/domain/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/configs/MessageSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/configs/MessageSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/configs/SpringDataRestConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/configs/SpringDataRestConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/controllers/ShowAllAnimalsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/controllers/ShowAllAnimalsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/logic/HowManyPlaceLeft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/service/SaveAnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/service/AnimalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/service/impl/SaveAnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/service/impl/AnimalServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/domain/MessageEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/domain/MessageEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/token/domain/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/token/domain/VerificationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatchesValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/annotation/PasswordMatches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/annotation/PasswordMatches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/AddingNewWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/AddingNewWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/EditingWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/EditingWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/domain/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/domain/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/dto/WorkerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/dto/WorkerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/dto/WorkerDTOEditing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/dto/WorkerDTOEditing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/service/impl/CreateRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/service/impl/CreateRoles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mail.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,33 +70,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "LombokPluginIS_LOMBOK_JPS_FIX_ENABLED": "true",
-    "LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.preview.features.used": "true",
-    "last_opened_file_path": "C:/Users/tomek/Desktop/spring-petclinic-main",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
-    "spring.configuration.checksum": "0a77e246b119fd822ce17876388b5271"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;LombokPluginIS_LOMBOK_JPS_FIX_ENABLED&quot;: &quot;true&quot;,
+    &quot;LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tomek/Desktop/spring-petclinic-main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Color Scheme Font&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0a77e246b119fd822ce17876388b5271&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradle build --warning-mode all" />
@@ -245,7 +219,8 @@
       <workItem from="1661280011424" duration="836000" />
       <workItem from="1661325507954" duration="10000" />
       <workItem from="1661332290905" duration="6679000" />
-      <workItem from="1661339793110" duration="4514000" />
+      <workItem from="1661339793110" duration="5309000" />
+      <workItem from="1661363973424" duration="3928000" />
     </task>
     <task id="LOCAL-00001" summary="migrated to java 18, updated all dependencies and gradle">
       <created>1657098844492</created>
@@ -254,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657098844493</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added LOMBOK annotations, removed adding users/roles but added sql script instead">
+      <created>1661358090486</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661358090487</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +262,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="whole application (built without commits)" />
     <MESSAGE value="migrated to java 18, updated all dependencies and gradle" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrated to java 18, updated all dependencies and gradle" />
+    <MESSAGE value="added LOMBOK annotations, removed adding users/roles but added sql script instead" />
+    <option name="LAST_COMMIT_MESSAGE" value="added LOMBOK annotations, removed adding users/roles but added sql script instead" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

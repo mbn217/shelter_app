@@ -2,11 +2,10 @@ package com.ziola.shelter.animals.controllers;
 
 import com.ziola.shelter.animals.dto.AnimalDTO;
 import com.ziola.shelter.animals.logic.AllCitiesFinderService;
-import com.ziola.shelter.animals.logic.HowManyPlaceLeft;
 import com.ziola.shelter.animals.repository.AnimalRepository;
+import com.ziola.shelter.animals.service.AnimalService;
 import com.ziola.shelter.util.ConverterDtoAnimalEntity;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,19 +20,12 @@ import java.util.List;
 @RequestMapping("/showAllAnimals/{specie}")
 public class ShowAllAnimalsController {
 
-  private AnimalRepository animalRepository;
-  private HowManyPlaceLeft howManyPlaceLeft;
-  private  AllCitiesFinderService allCitiesFinderService;
   private final int maximumAnimalsInShelter = 10;
-  private ConverterDtoAnimalEntity converterDtoAnimalEntity;
+  private final AnimalRepository animalRepository;
+  private  final AllCitiesFinderService allCitiesFinderService;
+  private final ConverterDtoAnimalEntity converterDtoAnimalEntity;
+  private final AnimalService animalService;
 
-  @Autowired
-  public ShowAllAnimalsController(AnimalRepository animalRepository, HowManyPlaceLeft howManyPlaceLeft, AllCitiesFinderService allCitiesFinderService, ConverterDtoAnimalEntity converterDtoAnimalEntity) {
-    this.animalRepository = animalRepository;
-    this.howManyPlaceLeft = howManyPlaceLeft;
-    this.allCitiesFinderService = allCitiesFinderService;
-    this.converterDtoAnimalEntity = converterDtoAnimalEntity;
-  }
 
   @GetMapping
   public String showAllAnimals(@PathVariable("specie") String specie, Model model) {
@@ -63,7 +55,7 @@ public class ShowAllAnimalsController {
   }
 
   private void checkIfShelterEmpty(Model model) {
-    if (howManyPlaceLeft.freePlacesLeft() == maximumAnimalsInShelter) {
+    if (animalService.freePlacesLeft() == maximumAnimalsInShelter) {
       model.addAttribute("emptyShelterFlash", "Hotel jest pusty. Można dodać zwierzaka");
     }
   }

@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping({"/", "/home"})
+@RequestMapping("/")
 public class MainController {
 
-	private final RandomAnimalsService randomAnimalsService;
 	private final static int NUMBER_OF_RANDOM_ANIMALS = 3;
+	private final RandomAnimalsService randomAnimalsService;
 	private final BucketsService bucketsService;
 
 	@Autowired
