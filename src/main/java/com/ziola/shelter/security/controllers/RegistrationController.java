@@ -6,6 +6,7 @@ import com.ziola.shelter.security.token.domain.VerificationToken;
 import com.ziola.shelter.workers.domain.Worker;
 import com.ziola.shelter.workers.dto.WorkerDTO;
 import com.ziola.shelter.workers.service.WorkerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.MessageSource;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
 import java.util.Calendar;
 import java.util.Locale;
 

@@ -5,6 +5,7 @@ import com.ziola.shelter.workers.domain.Worker;
 import com.ziola.shelter.workers.dto.WorkerDTOEditing;
 import com.ziola.shelter.workers.repository.WorkerRepository;
 import com.ziola.shelter.workers.service.WorkerService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
 
 @Controller
 @RequiredArgsConstructor

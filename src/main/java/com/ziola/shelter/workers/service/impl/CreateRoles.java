@@ -2,7 +2,6 @@ package com.ziola.shelter.workers.service.impl;
 
 import com.ziola.shelter.workers.domain.Role;
 import com.ziola.shelter.workers.repository.RoleRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +20,10 @@ public class CreateRoles {
 
     public void createRolesAdminAndUser() {
 
-        Role admin = new Role(1, "ADMIN");
-        Role user = new Role(2, "USER");
+        Role admin = new Role();
+        Role pedal = new Role();
 
         if (roleRepository.findByRole("ADMIN") == null) roleRepository.save(admin);
-        if (roleRepository.findByRole("USER") == null) roleRepository.save(user);
+        if (roleRepository.findByRole("pedal") == null) roleRepository.save(pedal);
     }
 }

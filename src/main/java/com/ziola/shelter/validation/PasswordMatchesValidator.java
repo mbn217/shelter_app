@@ -2,9 +2,8 @@ package com.ziola.shelter.validation;
 
 import com.ziola.shelter.validation.annotation.PasswordMatches;
 import com.ziola.shelter.workers.dto.WorkerDTO;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, Object> {
     @Override

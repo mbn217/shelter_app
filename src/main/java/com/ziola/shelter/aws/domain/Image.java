@@ -1,8 +1,15 @@
 package com.ziola.shelter.aws.domain;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "image")
 public class Image {
@@ -15,27 +22,4 @@ public class Image {
     @NotNull
     @Column(name = "linkToImage")
     private String linkToImage;
-
-    public Image() {
-    }
-
-    public Image(@NotNull String linkToImage) {
-        this.linkToImage = linkToImage;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getLinkToImage() {
-        return linkToImage;
-    }
-
-    public void setLinkToImage(String linkToImage) {
-        this.linkToImage = linkToImage;
-    }
 }

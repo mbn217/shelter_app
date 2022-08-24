@@ -11,7 +11,7 @@ public class SpringDataRestConfigs {
   @Bean
   public RepositoryRestConfigurer repositoryRestConfigurer() {
     return new RepositoryRestConfigurer() {
-      @Override
+
       public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.setBasePath("/apprest");
       }

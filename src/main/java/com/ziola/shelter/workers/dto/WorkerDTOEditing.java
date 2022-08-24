@@ -2,9 +2,9 @@ package com.ziola.shelter.workers.dto;
 
 import com.ziola.shelter.validation.annotation.ValidEmail;
 import com.ziola.shelter.workers.domain.Role;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class WorkerDTOEditing {
 

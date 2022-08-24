@@ -12,7 +12,7 @@ import com.ziola.shelter.aws.service.impl.ImageServiceImpl;
 import com.ziola.shelter.emails.service.SendingEmailToWorkersService;
 import com.ziola.shelter.util.ConverterDtoAnimalEntity;
 import com.ziola.shelter.util.ConvertingMultipartToFile;
-import lombok.RequiredArgsConstructor;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,13 +26,10 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.validation.Valid;
-
 import java.io.File;
 import java.io.IOException;
 
 @Controller
-@RequiredArgsConstructor
 public class AddAnimalsController {
 
     private int numberOfFreePlacesToSendEmails = 3;

@@ -1,9 +1,9 @@
 package com.ziola.shelter.validation.annotation;
 
 import com.ziola.shelter.validation.PasswordMatchesValidator;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
