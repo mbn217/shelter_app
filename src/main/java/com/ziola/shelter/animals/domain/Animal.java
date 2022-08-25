@@ -20,49 +20,49 @@ public class Animal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "animalId")
+    @Column(name = "animal_id")
     private Integer id;
 
     @Size(min = 2, max = 20, message = "{animal.domain.size.error}")
-    @Column(name = "animalsName")
+    @Column(name = "animal_name")
     private String name;
 
 
-    @Column(name = "animalsAge")
+    @Column(name = "animal_age")
     @NotNull(message = "{animal.domain.null.error}" )
     private int age;
 
     @NotNull(message = "{animal.domain.null.error}" )
-    @Column(name = "animalsSpecie")
+    @Column(name = "animal_specie")
     private String specie;
 
     @Size(max = 450)
     @NotNull(message = "{animal.domain.null.error}" )
-    @Column(name = "animalsDescription")
+    @Column(name = "animal_description")
     private String description;
 
     @Size(max = 150)
-    @Column(name = "animalsHealth")
+    @Column(name = "animal_health")
     @NotNull(message = "{animal.domain.null.error}" )
     private String health;
 
     @Size(max = 45)
-    @Column(name = "animalsRace")
+    @Column(name = "animal_race")
     @NotNull(message = "{animal.domain.null.error}" )
     private String race;
 
     @Size(max = 45)
-    @Column(name = "animalsSex")
+    @Column(name = "animal_sex")
     @NotNull(message = "{animal.domain.null.error}" )
     private String sex;
 
     @Size(max = 20)
-    @Column(name = "animalsCity")
+    @Column(name = "animal_city")
     @NotNull(message = "{animal.domain.null.error}" )
     private String city;
 
     @ManyToOne
-    @JoinColumn(name = "workers_id", nullable = false)
+    @JoinColumn(name = "worker_id", nullable = false)
     private Worker worker;
 
     @OneToOne(targetEntity = Image.class, fetch = FetchType.EAGER)

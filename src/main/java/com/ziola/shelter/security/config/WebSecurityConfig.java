@@ -27,9 +27,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         this.dataSource = dataSource;
     }
 
-    private String workersQuery = "select workers_email, workers_password, workers_active from worker where workers_email=?";
+    private String workersQuery = "select worker_email, worker_password, worker_active from worker where worker_email=?";
 
-    private String rolesQuery = "select Worker.Workers_email, Role.workers_role from Worker inner join Role on Worker.role_id = role.role_id where worker.workers_email=?";
+    private String rolesQuery = "select Worker.Worker_email, Role.worker_role from Worker inner join Role on Worker.role_id = role.role_id where worker.worker_email=?";
 
     @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
@@ -70,6 +70,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/templates/**");
+                .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/templates/**", "/seeDetails/**");
     }
 }

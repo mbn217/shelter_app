@@ -20,23 +20,23 @@ public class Worker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "workers_id")
+    @Column(name = "worker_id")
     private Integer id;
-    @Column(name = "workers_name")
+    @Column(name = "worker_name")
     @NotEmpty(message = "*Wprowadź imię")
     private String name;
-    @Column(name = "workers_last_name")
+    @Column(name = "worker_last_name")
     @NotEmpty(message = "*Wprowadź nazwisko")
     private String lastName;
-    @Column(name = "workers_email")
+    @Column(name = "worker_email")
     @Email(message = "*Wprowadź poprawny adres")
     @NotEmpty(message = "*Wprowadź poprawny adres")
     private String email;
-    @Column(name = "workers_password")
+    @Column(name = "worker_password")
     @Length(min = 5, message = "*Hasło musi mieć przynajmniej 5 znaków")
     @NotEmpty(message = "*Wprowadź hasło")
     private String password;
-    @Column(name = "workers_active")
+    @Column(name = "worker_active")
     private boolean active;
 
     @ManyToOne

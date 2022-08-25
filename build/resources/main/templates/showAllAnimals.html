@@ -72,12 +72,12 @@
             <a href="#" th:href="@{'/seeDetails/animal/'+ ${animal.idOfAnimalThatImageBelongsTo}}">
                 <button class="btn">Zobacz więcej</button>
             </a>
-            <a href="#" th:href="@{'/editDetails/animal/'+ ${animal.idOfAnimalThatImageBelongsTo}}">
+            <a href="#" th:href="@{'/editDetails/animal/'+ ${animal.idOfAnimalThatImageBelongsTo}}" th:if="${#httpServletRequest.remoteUser}">
                 <button class="btn">Edytuj dane</button>
             </a>
             <a href="#" th:href="@{'/deleteAnimal/' + ${animal.idOfAnimalThatImageBelongsTo}}" sec:authorize-url="/admin">
                 <button class="btn">Usuń z bazy</button>
-            </a>
+            </a>=
         </div>
     </div>
 </div>

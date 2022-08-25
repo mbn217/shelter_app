@@ -14,8 +14,8 @@ import static com.amazonaws.regions.Regions.EU_CENTRAL_1;
 public class AwsConfig {
 
     private AWSCredentials credentials = new BasicAWSCredentials(
-            "xx",
-            "xx"
+            "AKIAW35C6MA3TCV2STDJ",
+            "A3CmU0PubY2sXoJRdylteWEQVMuJTPmbrOWZ+6P8"
     );
 
     private AmazonS3 s3client = AmazonS3ClientBuilder

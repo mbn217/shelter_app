@@ -68,8 +68,7 @@ public class WorkerServiceImpl implements WorkerService {
 
   @Override
   public Worker getWorker(String verificationToken) {
-    Worker worker = tokenRepository.findByToken(verificationToken).getWorker();
-    return worker;
+    return tokenRepository.findByToken(verificationToken).getWorker();
   }
 
   private boolean emailExists(String email) {

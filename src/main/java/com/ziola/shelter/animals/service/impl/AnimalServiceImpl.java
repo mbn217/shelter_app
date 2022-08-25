@@ -27,66 +27,75 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Service
 public class AnimalServiceImpl implements AnimalService {
-  private static final int MAXIMUM_ANIMALS = 10;
-  private final static String BUCKET_NAME = "shelteriploadimages";
-  private final static int NUMBER_OF_FREE_PLACES_TO_SEND_EMAILS = 3;
-  private final AnimalRepository animalRepository;
-  private final WorkerRepository workerRepository;
-  private final SendingEmailToWorkersService sendingEmailToWorkersService;
-  private final TaskExecutor taskExecutor;
-  private final BucketsService bucketsService;
-  private final ConverterDtoAnimalEntity converterDtoAnimalEntity;
-  private final ConvertingMultipartToFile convertingMultipartToFile;
-  private final ImageRepository imageRepository;
-  private final ImageServiceImpl imageService;
+    private static final int MAXIMUM_ANIMALS = 10;
+    private final static String BUCKET_NAME = "shelterappphotos";
+    private final static int NUMBER_OF_FREE_PLACES_TO_SEND_EMAILS = 3;
+    private final AnimalRepository animalRepository;
+    private final WorkerRepository workerRepository;
+    private final SendingEmailToWorkersService sendingEmailToWorkersService;
+    private final TaskExecutor taskExecutor;
+    private final BucketsService bucketsService;
+    private final ConverterDtoAnimalEntity converterDtoAnimalEntity;
+    private final ConvertingMultipartToFile convertingMultipartToFile;
+    private final ImageRepository imageRepository;
+    private final ImageServiceImpl imageService;
 
 
-  public void saveAnimal(Animal animalToSave, Image image) {
-    Worker workerWhoIsAdding = workerRepository.findByEmail(findNameOfLoggedUser());
-    animalToSave.setWorker(workerWhoIsAdding);
-    animalToSave.setImage(image);
-    animalRepository.save(animalToSave);
-  }
-
-  public int freePlacesLeft() {
-    return MAXIMUM_ANIMALS - animalRepository.findAll().size();
-  }
-
-  @Override
-  public void takeDTOConvertAndSave(AnimalDTO newAnimalDto, MultipartFile image) {
-    Animal newAnimal = converterDtoAnimalEntity.convertToEntity(newAnimalDto);
-    Image newImage = checkIfImageExists(newAnimalDto, newAnimal);
-    saveAnimal(newAnimal, newImage);
-    taskExecutor.execute(() -> sendingEmailToWorkersService.checkIfEmailCanBeSent(freePlacesLeft(),
-            NUMBER_OF_FREE_PLACES_TO_SEND_EMAILS));
-    if (!image.isEmpty()) {
-      taskExecutor.execute(() -> uploadFile(image, newAnimal));
+    public void saveAnimal(Animal animalToSave, Image image) {
+        String emailOfLoggedUser = findEmailOfLoggedUser();
+        Worker workerWhoIsAdding = workerRepository.findByEmail(emailOfLoggedUser);
+        animalToSave.setWorker(workerWhoIsAdding);
+        animalToSave.setImage(image);
+        animalRepository.save(animalToSave);
     }
-  }
 
-  private String findNameOfLoggedUser() {
-    return SecurityContextHolder.getContext().getAuthentication().getName();
-  }
-
-  private void uploadFile(MultipartFile multipartFile, Animal animal) {
-    try {
-      File file = convertingMultipartToFile.convertMultiPartToFile(multipartFile);
-      String fileName = convertingMultipartToFile.generateFileName(animal);
-      bucketsService.uploadFile(BUCKET_NAME, fileName, file);
-    } catch (IOException e) {
-      e.printStackTrace();
+    public int freePlacesLeft() {
+        return MAXIMUM_ANIMALS - animalRepository.findAll().size();
     }
-  }
 
-  private Image checkIfImageExists(@ModelAttribute("newAnimalDto") @Valid AnimalDTO newAnimalDto, Animal newAnimal) {
-    Image newImage;
-    if (newAnimalDto.getLinkToImage() != null && !newAnimalDto.getLinkToImage().isEmpty()) {
-      Animal tempAnimal = animalRepository.findById(newAnimal.getId()).orElseThrow();
-      newImage = tempAnimal.getImage();
-    } else {
-      newImage = imageService.createNewImage(newAnimal);
-      imageRepository.save(newImage);
+    @Override
+    public void takeDTOConvertAndSave(AnimalDTO newAnimalDto, MultipartFile image) {
+        Animal newAnimal = converterDtoAnimalEntity.convertToEntity(newAnimalDto);
+        Boolean doesImageExist = checkIfImageExists(newAnimalDto);
+        Image newImage;
+        if (doesImageExist) newImage = getExistingImage(newAnimal);
+        else newImage = saveAndReturnImage(image, newAnimal);
+        saveAnimal(newAnimal, newImage);
+        taskExecutor.execute(() -> sendingEmailToWorkersService.checkIfEmailCanBeSent(freePlacesLeft(),
+                NUMBER_OF_FREE_PLACES_TO_SEND_EMAILS));
     }
-    return newImage;
-  }
+
+    private Image getExistingImage(Animal newAnimal) {
+        Animal tempAnimal = animalRepository.findById(newAnimal.getId()).orElseThrow();
+        Image newImage = tempAnimal.getImage();
+        return newImage;
+    }
+
+    private Image saveAndReturnImage(MultipartFile image, Animal newAnimal) {
+        Image newImage = imageService.createNewImage(newAnimal);
+        imageRepository.save(newImage);
+        if (!image.isEmpty()) {
+            taskExecutor.execute(() -> uploadFile(image, newAnimal));
+        }
+        return newImage;
+    }
+
+    private String findEmailOfLoggedUser() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+
+    private void uploadFile(MultipartFile multipartFile, Animal animal) {
+        try {
+            File file = convertingMultipartToFile.convertMultiPartToFile(multipartFile);
+            String fileName = convertingMultipartToFile.generateFileName(animal);
+            bucketsService.uploadFile(BUCKET_NAME, fileName, file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private boolean checkIfImageExists(@ModelAttribute("newAnimalDto") @Valid AnimalDTO newAnimalDto) {
+        if (newAnimalDto.getLinkToImage() != null && !newAnimalDto.getLinkToImage().isEmpty()) return true;
+        return false;
+    }
 }
