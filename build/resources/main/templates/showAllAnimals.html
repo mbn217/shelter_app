@@ -27,7 +27,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a th:href="@{/logout}">Wyloguj</a>
+                    <a th:href="@{/logout}" th:if="${#httpServletRequest.remoteUser}">Wyloguj</a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Miasto
@@ -77,7 +77,7 @@
             </a>
             <a href="#" th:href="@{'/deleteAnimal/' + ${animal.idOfAnimalThatImageBelongsTo}}" sec:authorize-url="/admin">
                 <button class="btn">Usuń z bazy</button>
-            </a>=
+            </a>
         </div>
     </div>
 </div>

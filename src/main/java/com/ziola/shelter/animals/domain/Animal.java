@@ -6,10 +6,13 @@ import com.ziola.shelter.workers.domain.Worker;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-@Data
+@ToString
+@RequiredArgsConstructor
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,42 +26,41 @@ public class Animal {
     @Column(name = "animal_id")
     private Integer id;
 
-    @Size(min = 2, max = 20, message = "{animal.domain.size.error}")
+    @Size(min = 2, max = 20, message = "Maksymalna liczba znaków 20!")
     @Column(name = "animal_name")
     private String name;
 
-
+    @NotNull(message = "Nie może być puste!")
     @Column(name = "animal_age")
-    @NotNull(message = "{animal.domain.null.error}" )
     private int age;
 
-    @NotNull(message = "{animal.domain.null.error}" )
+    @NotNull(message = "Nie może być puste!")
     @Column(name = "animal_specie")
     private String specie;
 
     @Size(max = 450)
-    @NotNull(message = "{animal.domain.null.error}" )
+    @NotNull(message = "{animal.domain.null.error}")
     @Column(name = "animal_description")
     private String description;
 
     @Size(max = 150)
+    @NotNull(message = "Nie może być puste!")
     @Column(name = "animal_health")
-    @NotNull(message = "{animal.domain.null.error}" )
     private String health;
 
     @Size(max = 45)
+    @NotNull(message = "Nie może być puste!")
     @Column(name = "animal_race")
-    @NotNull(message = "{animal.domain.null.error}" )
     private String race;
 
     @Size(max = 45)
+    @NotNull(message ="Nie może być puste!")
     @Column(name = "animal_sex")
-    @NotNull(message = "{animal.domain.null.error}" )
     private String sex;
 
     @Size(max = 20)
+    @NotNull(message = "Nie może być puste!")
     @Column(name = "animal_city")
-    @NotNull(message = "{animal.domain.null.error}" )
     private String city;
 
     @ManyToOne
@@ -68,4 +70,17 @@ public class Animal {
     @OneToOne(targetEntity = Image.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "image_id", nullable = false)
     private Image image;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Animal animal = (Animal) o;
+        return id != null && Objects.equals(id, animal.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

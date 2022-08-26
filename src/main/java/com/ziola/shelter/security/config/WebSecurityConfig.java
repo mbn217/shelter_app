@@ -27,12 +27,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         this.dataSource = dataSource;
     }
 
-    private String workersQuery = "select worker_email, worker_password, worker_active from worker where worker_email=?";
-
-    private String rolesQuery = "select Worker.Worker_email, Role.worker_role from Worker inner join Role on Worker.role_id = role.role_id where worker.worker_email=?";
-
     @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+        final String workersQuery = "select worker_email, worker_password, worker_active from worker where worker_email=?";
+        final String rolesQuery = "select Worker.Worker_email, Role.worker_role from Worker inner join Role on Worker.role_id = role.role_id where worker.worker_email=?";
         authenticationManagerBuilder.
                 jdbcAuthentication()
                 .usersByUsernameQuery(workersQuery)
@@ -47,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/login", "/rest", "/apprest/**", "/registrationConfirm", "/showAllAnimals/**", "/registration", "/static/**", "/images/**").permitAll()
                 .antMatchers("/**/*.js", "/**/*.css", "/**/*.jpg").permitAll()
-                .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/admin/**").hasAuthority("Admin")
                 .anyRequest().authenticated()
                 .and()
                 .csrf()
@@ -67,7 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
+    public void configure(WebSecurity web) {
         web
                 .ignoring()
                 .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**", "/templates/**", "/seeDetails/**");

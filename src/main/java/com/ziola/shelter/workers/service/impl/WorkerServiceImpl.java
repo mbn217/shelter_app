@@ -9,27 +9,18 @@ import com.ziola.shelter.workers.dto.WorkerDTO;
 import com.ziola.shelter.workers.repository.RoleRepository;
 import com.ziola.shelter.workers.repository.WorkerRepository;
 import com.ziola.shelter.workers.service.WorkerService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class WorkerServiceImpl implements WorkerService {
 
-  private WorkerRepository workerRepository;
-  private RoleRepository roleRepository;
-  private BCryptPasswordEncoder bCryptPasswordEncoder;
-  private TokenRepository tokenRepository;
-
-  @Autowired
-  public WorkerServiceImpl(WorkerRepository workerRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder, TokenRepository tokenRepository) {
-    this.workerRepository = workerRepository;
-    this.roleRepository = roleRepository;
-    this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-    this.tokenRepository = tokenRepository;
-  }
-
-  private String welcomeMessage = "Witamy w PodPsem.pl. Miło nam, że dołączyłeś do nas!";
+  private final WorkerRepository workerRepository;
+  private final RoleRepository roleRepository;
+  private final BCryptPasswordEncoder bCryptPasswordEncoder;
+  private final TokenRepository tokenRepository;
 
   public Worker findWorkerByEmail(String email) {
     return workerRepository.findByEmail(email);
@@ -45,7 +36,7 @@ public class WorkerServiceImpl implements WorkerService {
     worker.setLastName(workerDTO.getLastName());
     worker.setEmail(workerDTO.getEmail());
     worker.setPassword(setEncodePasswordNewWorker(workerDTO));
-    worker.setRole(roleRepository.findByRole("ADMIN"));
+    worker.setRole(roleRepository.findByRole("USER"));
     return workerRepository.save(worker);
   }
 

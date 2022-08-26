@@ -23,6 +23,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -56,7 +59,7 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     public void takeDTOConvertAndSave(AnimalDTO newAnimalDto, MultipartFile image) {
         Animal newAnimal = converterDtoAnimalEntity.convertToEntity(newAnimalDto);
-        Boolean doesImageExist = checkIfImageExists(newAnimalDto);
+        boolean doesImageExist = checkIfImageExists(newAnimalDto);
         Image newImage;
         if (doesImageExist) newImage = getExistingImage(newAnimal);
         else newImage = saveAndReturnImage(image, newAnimal);
@@ -65,10 +68,54 @@ public class AnimalServiceImpl implements AnimalService {
                 NUMBER_OF_FREE_PLACES_TO_SEND_EMAILS));
     }
 
+    @Override
+    public AnimalDTO findAnimalByIdAndConvertToDTO(int animalId) {
+        Animal tempAnimal = animalRepository.findById(animalId);
+        return converterDtoAnimalEntity.convertToDto(tempAnimal);
+    }
+
+    @Override
+    public void findAndDeleteAnimal(int animalId) {
+        Animal animal = animalRepository.findById(animalId);
+        String[] temp = animal.getImage().getLinkToImage().split("https://s3.eu-central-1.amazonaws.com/shelteriploadimages/");
+        String nameOfImage = temp[1];
+        if (bucketsService.listHasObject(BUCKET_NAME, nameOfImage)) {
+            bucketsService.deleteAnObject(BUCKET_NAME, animal);
+        }
+        imageRepository.delete(animal.getImage());
+        animalRepository.deleteById(animalId);
+    }
+
+    @Override
+    public List<AnimalDTO> findAllAnimalsBySpecieAndCity(String cityOfAnimal) {
+        return animalRepository.findAll().stream()
+                .filter(animal -> animal.getCity().equals(cityOfAnimal))
+                .map(converterDtoAnimalEntity::convertToDtoWithId)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    @Override
+    public List<AnimalDTO> findAllAnimalsBySpecie(String specie) {
+        List<AnimalDTO> listOfAllAnimalsBySpecie = new ArrayList<>();
+        if (specie.equals("all")) {
+            animalRepository.findAll()
+                    .forEach(animal -> listOfAllAnimalsBySpecie.add(converterDtoAnimalEntity.convertToDtoWithId(animal)));
+        } else {
+            animalRepository.findBySpecie(specie)
+                    .forEach(animal -> listOfAllAnimalsBySpecie.add(converterDtoAnimalEntity.convertToDtoWithId(animal)));
+        }
+        return listOfAllAnimalsBySpecie;
+    }
+
+    @Override
+    public List<String> collectCitiesToList() {
+        return animalRepository.findAll().stream()
+                .map(Animal::getCity).distinct().collect(java.util.stream.Collectors.toList());
+    }
+
     private Image getExistingImage(Animal newAnimal) {
         Animal tempAnimal = animalRepository.findById(newAnimal.getId()).orElseThrow();
-        Image newImage = tempAnimal.getImage();
-        return newImage;
+        return tempAnimal.getImage();
     }
 
     private Image saveAndReturnImage(MultipartFile image, Animal newAnimal) {
@@ -95,7 +142,6 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     private boolean checkIfImageExists(@ModelAttribute("newAnimalDto") @Valid AnimalDTO newAnimalDto) {
-        if (newAnimalDto.getLinkToImage() != null && !newAnimalDto.getLinkToImage().isEmpty()) return true;
-        return false;
+        return newAnimalDto.getLinkToImage() != null && !newAnimalDto.getLinkToImage().isEmpty();
     }
 }
