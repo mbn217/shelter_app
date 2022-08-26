@@ -1,6 +1,6 @@
 package com.ziola.shelter.util;
 
-import com.ziola.shelter.animals.Animal;
+import com.ziola.shelter.animals.domain.Animal;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 

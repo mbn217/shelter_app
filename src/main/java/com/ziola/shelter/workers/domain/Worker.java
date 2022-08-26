@@ -1,6 +1,6 @@
 package com.ziola.shelter.workers.domain;
 
-import com.ziola.shelter.animals.Animal;
+import com.ziola.shelter.animals.domain.Animal;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

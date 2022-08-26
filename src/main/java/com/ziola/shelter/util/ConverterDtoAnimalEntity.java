@@ -1,7 +1,7 @@
 package com.ziola.shelter.util;
 
-import com.ziola.shelter.animals.Animal;
-import com.ziola.shelter.animals.AnimalDTO;
+import com.ziola.shelter.animals.domain.Animal;
+import com.ziola.shelter.animals.dto.AnimalDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
