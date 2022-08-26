@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/shelter-0.0.1-SNAPSHOT.jar
+web: java $JAVA_OPTS -Dserver.port=8080 -Dspring.profiles.active=default -jar target/shelter-0.0.1-SNAPSHOT.jar
