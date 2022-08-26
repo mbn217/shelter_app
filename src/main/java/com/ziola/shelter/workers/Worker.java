@@ -22,15 +22,15 @@ public class Worker {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "worker_id")
     private Integer id;
-    @Column(name = "worker_name")
     @NotEmpty(message = "*Wprowadź imię")
+    @Column(name = "worker_name")
     private String name;
-    @Column(name = "worker_last_name")
     @NotEmpty(message = "*Wprowadź nazwisko")
+    @Column(name = "worker_last_name")
     private String lastName;
-    @Column(name = "worker_email")
-    @Email(message = "*Wprowadź poprawny adres")
+    @Email(message = "*Wprowadź poprawny adres", regexp = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$")
     @NotEmpty(message = "*Wprowadź poprawny adres")
+    @Column(name = "worker_email")
     private String email;
 
     @Column(name = "worker_password")
