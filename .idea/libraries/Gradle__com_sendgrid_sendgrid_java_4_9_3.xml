@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.sendgrid:sendgrid-java:4.9.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sendgrid/sendgrid-java/4.9.3/4bfcb6a476c537c183f3d8b9a98aba8eb1c7fdab/sendgrid-java-4.9.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sendgrid/sendgrid-java/4.9.3/32605b77c7e6d680cd14263c7d1fc07576aeb9d/sendgrid-java-4.9.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

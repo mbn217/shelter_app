@@ -10,13 +10,6 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @Configuration
 public class MessageSourceConfig {
 
-//  @Bean
-//  public LocalValidatorFactoryBean getValidator() {
-//    LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
-//    bean.setValidationMessageSource(messageSource());
-//    return bean;
-//  }
-
   @Bean
   @Qualifier("customMessages")
   public MessageSource messageSource() {
