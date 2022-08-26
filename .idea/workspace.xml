@@ -4,97 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="removed WebSecurityConfigurerAdapter">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/animals/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/animals/Animal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/animals/AnimalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/animals/AnimalServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/aws/BucketsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/aws/BucketsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/configs/MessageSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/configs/MessageSourceConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/config/SendingMailsConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/controllers/SendingEmailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/domain/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/service/EmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/service/SendingEmailToWorkersService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/service/impl/EmailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/service/impl/SendingEmailToWorkersServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/image/ImageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/image/ImageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/config/WebSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/controllers/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/controllers/RegistrationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/event/OnRegistrationCompleteEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/event/RegistrationListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/token/domain/VerificationToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/token/repository/TokenRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/util/ConvertWorkerDTOEditingEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/util/ConvertWorkerDTOEditingEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/util/ConverterDtoWorkerEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/util/ConverterDtoWorkerEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/validation/PasswordMatchesValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/validation/PasswordMatchesValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/AddingNewWorkerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/AddingNewWorkerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/DeleteWorkerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/DeleteWorkerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/EditingWorkerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/EditingWorkerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/ShowingAllWorkersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/ShowingAllWorkersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/WorkerDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/WorkerDetailController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/domain/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/domain/Worker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/dto/WorkerDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/dto/WorkerDTOEditing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/repository/WorkerRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/service/AddingWorkerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/service/WorkerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/service/impl/AddingWorkerServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/service/impl/WorkerServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/AnimalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/AnimalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/AnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/AnimalServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/RandomAnimalsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/animals/RandomAnimalsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/aws/BucketsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/aws/BucketsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/configs/MessageSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/configs/MessageSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/config/SendingMailsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingMailsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/controllers/SendingEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/service/SendingEmailToWorkersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailToWorkersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/service/impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/service/impl/SendingEmailToWorkersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailToWorkersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/image/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/image/ImageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/image/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/image/ImageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/event/OnRegistrationCompleteEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/OnRegistrationCompleteEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/event/RegistrationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/token/domain/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/VerificationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/token/repository/TokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/TokenRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/util/ConvertWorkerDTOEditingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/util/ConvertWorkerDTOEditingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/util/ConverterDtoWorkerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/util/ConverterDtoWorkerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatchesValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/AddingNewWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/AddingNewWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/DeleteWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/DeleteWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/EditingWorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/EditingWorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/ShowingAllWorkersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/ShowingAllWorkersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/WorkerDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/WorkerDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/role/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/domain/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/dto/WorkerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/dto/WorkerDTOEditing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerDTOEditing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/role/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/repository/WorkerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/service/AddingWorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/AddingWorkerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/service/WorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/service/impl/AddingWorkerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/AddingWorkerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/service/impl/WorkerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="removed WebSecurityConfigurerAdapter" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,7 +120,7 @@
       <updated>1661501925548</updated>
       <workItem from="1661501928589" duration="1282000" />
       <workItem from="1661509073125" duration="5162000" />
-      <workItem from="1661520785706" duration="1801000" />
+      <workItem from="1661520785706" duration="2321000" />
     </task>
     <task id="LOCAL-00004" summary="changed of organization of animal package">
       <created>1661502042479</created>
@@ -219,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661502042479</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="removed WebSecurityConfigurerAdapter">
+      <created>1661527798762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661527798762</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
