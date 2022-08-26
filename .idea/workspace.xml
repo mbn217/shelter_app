@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="removed WebSecurityConfigurerAdapter" />
+    <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="removed WebSecurityConfigurerAdapter">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +122,7 @@
       <updated>1661501925548</updated>
       <workItem from="1661501928589" duration="1282000" />
       <workItem from="1661509073125" duration="5162000" />
-      <workItem from="1661520785706" duration="2970000" />
+      <workItem from="1661520785706" duration="3894000" />
     </task>
     <task id="LOCAL-00004" summary="changed of organization of animal package">
       <created>1661502042479</created>
