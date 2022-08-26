@@ -1,35 +1,24 @@
 package com.ziola.shelter.controllers;
 
 import com.ziola.shelter.animals.RandomAnimalsService;
-import com.ziola.shelter.aws.BucketsService;
 import com.ziola.shelter.emails.Message;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/")
 public class MainController {
 
 	private final static int NUMBER_OF_RANDOM_ANIMALS = 3;
 	private final RandomAnimalsService randomAnimalsService;
-	private final BucketsService bucketsService;
-
-	@Autowired
-	public MainController(RandomAnimalsService randomAnimalsService, BucketsService bucketsService) {
-		this.randomAnimalsService = randomAnimalsService;
-		this.bucketsService = bucketsService;
-	}
 
 	@GetMapping
 	public String allAnimals(Model model) {
 		Message messageEntity = new Message();
-		if(!bucketsService.checkIfExists("shelteriploadimages")){
-			bucketsService.createBucket("shelteriploadimages");
-		}
 		model.addAttribute("randomAnimals", randomAnimalsService.randomAnimalsList(NUMBER_OF_RANDOM_ANIMALS));
 		model.addAttribute("newMessage", messageEntity);
 		return "index";

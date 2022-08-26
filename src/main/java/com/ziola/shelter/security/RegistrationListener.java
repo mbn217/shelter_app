@@ -1,8 +1,8 @@
 package com.ziola.shelter.security;
 
 import com.ziola.shelter.emails.EmailService;
+import com.ziola.shelter.token.VerificationTokenService;
 import com.ziola.shelter.workers.Worker;
-import com.ziola.shelter.workers.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationListener;
@@ -16,14 +16,14 @@ import java.util.UUID;
 public class RegistrationListener implements ApplicationListener<OnRegistrationCompleteEvent> {
 
     private final MessageSource messages;
-    private final WorkerService workerService;
+    private final VerificationTokenService tokenService;
     private final EmailService emailService;
     private final TaskExecutor taskExecutor;
 
     @Autowired
-    public RegistrationListener(@Qualifier("customMessages") MessageSource messages, WorkerService workerService, EmailService emailService, TaskExecutor taskExecutor) {
+    public RegistrationListener(@Qualifier("customMessages") MessageSource messages, VerificationTokenService tokenService, EmailService emailService, TaskExecutor taskExecutor) {
         this.messages = messages;
-        this.workerService = workerService;
+        this.tokenService = tokenService;
         this.emailService = emailService;
         this.taskExecutor = taskExecutor;
     }
@@ -36,13 +36,13 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
     private void confirmRegistration(OnRegistrationCompleteEvent event) {
         Worker worker = event.getWorker();
         String token = UUID.randomUUID().toString();
-        workerService.createVerificationToken(worker, token);
+        tokenService.createVerificationToken(worker, token);
 
         String recipientAddress = worker.getEmail();
         String subject = "Potwierdzenie rejestracji";
-        String confirmationurl = event.getAppUrl() + "/registrationConfirm?token=" + token;
+        String confirmationurl = event.getAppUrl() + "registrationConfirm?token=" + token;
         String message = messages.getMessage("message.regSucc", null, event.getLocale())
-                + " rn " + "https://shelter-demo.herokuapp.com" + confirmationurl;
+                + " rn " + "http://localhost:8080/" + confirmationurl;
 
         taskExecutor.execute(() -> emailService.sendSimpleMessage(recipientAddress, subject, message));
     }

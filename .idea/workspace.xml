@@ -5,7 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="removed WebSecurityConfigurerAdapter">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/role/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/token/VerificationTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/token/VerificationTokenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/bootJarMainClassName" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/animals/AnimalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/animals/AnimalServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/aws/BucketsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/aws/BucketsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/SendingEmailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/SendingEmailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/SendingEmailToWorkersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/emails/SendingEmailToWorkersServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/RegistrationListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/RegistrationListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/TokenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/security/VerificationToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/util/ConverterDtoWorkerEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/util/ConverterDtoWorkerEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/AddingWorkerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/AddingWorkerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/WorkerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/WorkerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/WorkerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/WorkerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/ShowingAllWorkersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ziola/shelter/workers/controllers/ShowingAllWorkersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/shelter-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/shelter-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lombok/effective-config/lombok-test.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mail.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailToWorkersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/emails/SendingEmailToWorkersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/RegistrationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/TokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/token/TokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/security/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/token/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mail.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mail.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +62,15 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +116,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;81425e4e456740d553cce932d7aba15a&quot;
   }
 }</component>
@@ -122,7 +178,9 @@
       <updated>1661501925548</updated>
       <workItem from="1661501928589" duration="1282000" />
       <workItem from="1661509073125" duration="5162000" />
-      <workItem from="1661520785706" duration="4231000" />
+      <workItem from="1661520785706" duration="6062000" />
+      <workItem from="1661535792150" duration="3242000" />
+      <workItem from="1661539070559" duration="2762000" />
     </task>
     <task id="LOCAL-00004" summary="changed of organization of animal package">
       <created>1661502042479</created>
@@ -167,5 +225,9 @@
     <MESSAGE value="changed of organization of animal package" />
     <MESSAGE value="removed WebSecurityConfigurerAdapter" />
     <option name="LAST_COMMIT_MESSAGE" value="removed WebSecurityConfigurerAdapter" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

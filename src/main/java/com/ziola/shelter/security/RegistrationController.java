@@ -1,6 +1,7 @@
 package com.ziola.shelter.security;
 
-import com.ziola.shelter.exceptions.EmailExistsException;
+import com.ziola.shelter.token.VerificationToken;
+import com.ziola.shelter.token.VerificationTokenService;
 import com.ziola.shelter.workers.Worker;
 import com.ziola.shelter.workers.WorkerDTO;
 import com.ziola.shelter.workers.WorkerService;
@@ -18,16 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.Calendar;
 import java.util.Locale;
 
 @RequiredArgsConstructor
 @Controller
 public class RegistrationController {
 
-    private  final WorkerService workerService;
-    private  final ApplicationEventPublisher eventPublisher;
-    private  final MessageSource messages;
+    private final WorkerService workerService;
+    private final ApplicationEventPublisher eventPublisher;
+    private final MessageSource messages;
+    private final VerificationTokenService verificationTokenService;
 
 
     @GetMapping(value = "/registration")
@@ -42,7 +43,7 @@ public class RegistrationController {
         if (result.hasErrors()) {
             return "registration";
         }
-        Worker workerExists = createWorkerAccount(workerDTO);
+        Worker workerExists = workerService.createWorkerAccount(workerDTO);
         if (workerExists == null) {
             result.rejectValue("email", "error.user", "Adres email jest zajęty");
         }
@@ -58,9 +59,7 @@ public class RegistrationController {
 
     @GetMapping("/registrationConfirm")
     public String confirmRegistration(WebRequest request, Model model, @RequestParam("token") String token) {
-
         Locale locale = request.getLocale();
-
         VerificationToken verificationToken = workerService.getVerificationToken(token);
         if (verificationToken == null) {
             String message = messages.getMessage("auth.message.invalidToken", null, locale);
@@ -68,29 +67,9 @@ public class RegistrationController {
             return "redirect:/login";
         }
         Worker worker = verificationToken.getWorker();
-        if (checkIfTokenIsExpired(model, locale, verificationToken)) return "redirect:/login";
+        if (verificationTokenService.checkIfTokenIsExpired(model, locale, verificationToken)) return "redirect:/login";
         worker.setActive(true);
         workerService.saverRegisteredWorker(worker);
         return "redirect:/login";
-    }
-
-    private boolean checkIfTokenIsExpired(Model model, Locale locale, VerificationToken verificationToken) {
-        Calendar cal = Calendar.getInstance();
-        if ((verificationToken.getExpiryDate().getTime() - cal.getTime().getTime() <= 0)) {
-            String messageValue = messages.getMessage("auth.message.expired", null, locale);
-            model.addAttribute("message", messageValue);
-            return true;
-        }
-        return false;
-    }
-
-    private Worker createWorkerAccount(WorkerDTO workerDTO){
-        Worker registered;
-        try {
-            registered = workerService.registerNewUserAccount(workerDTO);
-        } catch (EmailExistsException emailExistsException) {
-            return null;
-        }
-        return registered;
     }
 }
