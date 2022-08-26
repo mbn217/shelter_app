@@ -1,13 +1,13 @@
-package com.ziola.shelter.animals.service.impl;
+package com.ziola.shelter.animals;
 
-import com.ziola.shelter.animals.domain.Animal;
-import com.ziola.shelter.animals.dto.AnimalDTO;
-import com.ziola.shelter.animals.repository.AnimalRepository;
-import com.ziola.shelter.animals.service.AnimalService;
-import com.ziola.shelter.aws.domain.Image;
-import com.ziola.shelter.aws.repository.ImageRepository;
-import com.ziola.shelter.aws.service.BucketsService;
-import com.ziola.shelter.aws.service.impl.ImageServiceImpl;
+import com.ziola.shelter.animals.Animal;
+import com.ziola.shelter.animals.AnimalDTO;
+import com.ziola.shelter.animals.AnimalRepository;
+import com.ziola.shelter.animals.AnimalService;
+import com.ziola.shelter.image.Image;
+import com.ziola.shelter.image.ImageRepository;
+import com.ziola.shelter.aws.BucketsService;
+import com.ziola.shelter.image.ImageServiceImpl;
 import com.ziola.shelter.emails.service.SendingEmailToWorkersService;
 import com.ziola.shelter.util.ConverterDtoAnimalEntity;
 import com.ziola.shelter.util.ConvertingMultipartToFile;

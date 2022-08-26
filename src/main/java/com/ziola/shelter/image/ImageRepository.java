@@ -1,6 +1,6 @@
-package com.ziola.shelter.aws.repository;
+package com.ziola.shelter.image;
 
-import com.ziola.shelter.aws.domain.Image;
+import com.ziola.shelter.image.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 

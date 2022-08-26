@@ -1,7 +1,7 @@
-package com.ziola.shelter.animals.domain;
+package com.ziola.shelter.animals;
 
 
-import com.ziola.shelter.aws.domain.Image;
+import com.ziola.shelter.image.Image;
 import com.ziola.shelter.workers.domain.Worker;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

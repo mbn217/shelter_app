@@ -1,6 +1,6 @@
-package com.ziola.shelter.animals.repository;
+package com.ziola.shelter.animals;
 
-import com.ziola.shelter.animals.domain.Animal;
+import com.ziola.shelter.animals.Animal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 

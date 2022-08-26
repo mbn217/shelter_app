@@ -1,8 +1,8 @@
-package com.ziola.shelter.animals.service;
+package com.ziola.shelter.animals;
 
-import com.ziola.shelter.animals.domain.Animal;
-import com.ziola.shelter.animals.dto.AnimalDTO;
-import com.ziola.shelter.aws.domain.Image;
+import com.ziola.shelter.animals.Animal;
+import com.ziola.shelter.animals.AnimalDTO;
+import com.ziola.shelter.image.Image;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

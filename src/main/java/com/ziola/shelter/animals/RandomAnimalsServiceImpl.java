@@ -1,9 +1,9 @@
-package com.ziola.shelter.animals.service.impl;
+package com.ziola.shelter.animals;
 
-import com.ziola.shelter.animals.domain.Animal;
-import com.ziola.shelter.animals.dto.AnimalDTO;
-import com.ziola.shelter.animals.repository.AnimalRepository;
-import com.ziola.shelter.animals.service.RandomAnimalsService;
+import com.ziola.shelter.animals.Animal;
+import com.ziola.shelter.animals.AnimalDTO;
+import com.ziola.shelter.animals.AnimalRepository;
+import com.ziola.shelter.animals.RandomAnimalsService;
 import com.ziola.shelter.util.ConverterDtoAnimalEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

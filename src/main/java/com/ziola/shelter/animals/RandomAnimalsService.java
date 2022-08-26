@@ -1,6 +1,6 @@
-package com.ziola.shelter.animals.service;
+package com.ziola.shelter.animals;
 
-import com.ziola.shelter.animals.dto.AnimalDTO;
+import com.ziola.shelter.animals.AnimalDTO;
 
 import java.util.List;
 

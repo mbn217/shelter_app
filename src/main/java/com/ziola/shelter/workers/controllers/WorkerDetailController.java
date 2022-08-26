@@ -1,6 +1,6 @@
 package com.ziola.shelter.workers.controllers;
 
-import com.ziola.shelter.animals.dto.AnimalDTO;
+import com.ziola.shelter.animals.AnimalDTO;
 import com.ziola.shelter.util.ConvertWorkerDTOEditingEntity;
 import com.ziola.shelter.util.ConverterDtoAnimalEntity;
 import com.ziola.shelter.workers.domain.Worker;

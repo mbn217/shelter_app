@@ -1,8 +1,8 @@
-package com.ziola.shelter.aws.service;
+package com.ziola.shelter.aws;
 
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.ObjectListing;
-import com.ziola.shelter.animals.domain.Animal;
+import com.ziola.shelter.animals.Animal;
 
 import java.io.File;
 import java.util.List;

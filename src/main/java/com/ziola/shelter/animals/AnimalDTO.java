@@ -1,4 +1,4 @@
-package com.ziola.shelter.animals.dto;
+package com.ziola.shelter.animals;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

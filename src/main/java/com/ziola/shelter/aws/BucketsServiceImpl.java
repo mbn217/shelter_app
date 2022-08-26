@@ -1,9 +1,8 @@
-package com.ziola.shelter.aws.service.impl;
+package com.ziola.shelter.aws;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.*;
-import com.ziola.shelter.animals.domain.Animal;
-import com.ziola.shelter.aws.service.BucketsService;
+import com.ziola.shelter.animals.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

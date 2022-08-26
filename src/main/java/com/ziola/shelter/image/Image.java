@@ -1,4 +1,4 @@
-package com.ziola.shelter.aws.domain;
+package com.ziola.shelter.image;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

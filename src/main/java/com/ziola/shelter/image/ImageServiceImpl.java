@@ -1,7 +1,6 @@
-package com.ziola.shelter.aws.service.impl;
+package com.ziola.shelter.image;
 
-import com.ziola.shelter.animals.domain.Animal;
-import com.ziola.shelter.aws.domain.Image;
+import com.ziola.shelter.animals.Animal;
 import org.springframework.stereotype.Service;
 
 @Service

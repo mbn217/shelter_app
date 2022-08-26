@@ -1,0 +1,5 @@
+app:
+  datasource:
+    jdbc-url: mysql://b18ca640ec703d:bcb0686a@eu-cdbr-west-03.cleardb.net/heroku_24416799c591b6e?reconnect=true
+    username: b18ca640ec703d
+    password: bcb0686a
