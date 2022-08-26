@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -110,7 +111,7 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     private Image getExistingImage(Animal newAnimal) {
-        Animal tempAnimal = animalRepository.findById(newAnimal.getId()).orElseThrow();
+        Animal tempAnimal = animalRepository.findById(newAnimal.getId()).orElseThrow(IllegalStateException::new);
         return tempAnimal.getImage();
     }
 
