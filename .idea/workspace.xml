@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="cleanedup services and controllers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_parent_pom_2_7_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +195,7 @@
       <workItem from="1661520785706" duration="6062000" />
       <workItem from="1661535792150" duration="3242000" />
       <workItem from="1661539070559" duration="3750000" />
-      <workItem from="1661544026074" duration="3777000" />
+      <workItem from="1661544026074" duration="4209000" />
     </task>
     <task id="LOCAL-00004" summary="changed of organization of animal package">
       <created>1661502042479</created>
