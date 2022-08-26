@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="cleanedup services and controllers">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +194,7 @@
       <workItem from="1661520785706" duration="6062000" />
       <workItem from="1661535792150" duration="3242000" />
       <workItem from="1661539070559" duration="3750000" />
-      <workItem from="1661544026074" duration="3430000" />
+      <workItem from="1661544026074" duration="3777000" />
     </task>
     <task id="LOCAL-00004" summary="changed of organization of animal package">
       <created>1661502042479</created>

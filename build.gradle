@@ -27,7 +27,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     implementation 'org.springframework:spring-context-support'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.1'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.7.3', ext: 'pom'
+cd desktop/shelter
 
 
     implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
