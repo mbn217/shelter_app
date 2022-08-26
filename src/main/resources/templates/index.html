@@ -38,7 +38,7 @@
                     <a href="#" th:href="@{/registration}" th:unless="${#httpServletRequest.remoteUser}">Rejestracja</a>
                 </li>
                 <li>
-                    <a th:href="@{/admin/home}" sec:authorize-url="/admin">Panel administratora</a>
+                    <a th:href="@{/showAllWorkers}" sec:authorize-url="/admin">Panel administratora</a>
                 </li>
                 <li><a href="#band">O nas</a></li>
                 <li><a href="#tour">Zwierzęta</a></li>

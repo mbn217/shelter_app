@@ -2,7 +2,6 @@ package com.ziola.shelter.workers;
 
 import com.ziola.shelter.role.Role;
 import com.ziola.shelter.validation.annotation.PasswordMatches;
-import com.ziola.shelter.validation.annotation.ValidEmail;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

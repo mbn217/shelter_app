@@ -22,4 +22,6 @@ public interface AnimalService {
     List<String> collectCitiesToList();
 
     List<AnimalDTO> findAllAnimalsBySpecieAndCity(String cityOfAnimal);
+
+    List<AnimalDTO> findByWorkerIdAndReturnList(int workerId);
 }

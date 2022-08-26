@@ -3,8 +3,7 @@ package com.ziola.shelter.workers;
 import com.ziola.shelter.exceptions.EmailExistsException;
 import com.ziola.shelter.role.Role;
 import com.ziola.shelter.role.RoleRepository;
-import com.ziola.shelter.token.TokenRepository;
-import com.ziola.shelter.token.VerificationToken;
+import com.ziola.shelter.util.ConvertWorkerDTOEditingEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,7 @@ public class WorkerServiceImpl implements WorkerService {
     private final WorkerRepository workerRepository;
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    private final TokenRepository tokenRepository;
+    private final ConvertWorkerDTOEditingEntity converterDtoWorkerEntity;
 
     @Override
     public Worker registerNewUserAccount(WorkerDTO workerDTO) throws EmailExistsException {
@@ -30,11 +29,6 @@ public class WorkerServiceImpl implements WorkerService {
         worker.setPassword(setEncodePasswordNewWorker(workerDTO));
         worker.setRole(roleRepository.findByRole("User"));
         return workerRepository.save(worker);
-    }
-
-    @Override
-    public VerificationToken getVerificationToken(String token) {
-        return tokenRepository.findByToken(token);
     }
 
     @Override
@@ -58,6 +52,31 @@ public class WorkerServiceImpl implements WorkerService {
         Role workerRole = roleRepository.findByRole(role);
         worker.setRole(workerRole);
         workerRepository.save(worker);
+    }
+
+    public boolean checkIfExistsThenSave(Worker worker) {
+        if (emailExists(worker.getEmail())) {
+            return false;
+        }else{
+            workerRepository.save(worker);
+            return true;
+        }
+    }
+
+    @Override
+    public void deleteById(int id) {
+        workerRepository.deleteById(id);
+    }
+
+    @Override
+    public Object findAll() {
+        return workerRepository.findAll();
+    }
+
+    @Override
+    public WorkerDTOEditing findByIdAndConvertToDTO(int workerId) {
+        Worker workerFound = workerRepository.findById(workerId);
+        return converterDtoWorkerEntity.convertToDto(workerFound);
     }
 
     private boolean emailExists(String email) {

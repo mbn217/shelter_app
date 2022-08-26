@@ -2,6 +2,7 @@ package com.ziola.shelter.workers;
 
 import com.ziola.shelter.animals.Animal;
 import com.ziola.shelter.role.Role;
+import com.ziola.shelter.token.VerificationToken;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -39,6 +40,9 @@ public class Worker {
     private String password;
     @Column(name = "worker_active")
     private boolean active;
+
+    @OneToOne(mappedBy = "worker")
+    private VerificationToken verificationToken;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id", nullable = false)

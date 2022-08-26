@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Szczegóły</title>
@@ -61,7 +61,7 @@
         <a href="#" th:href="@{'/editDetails/worker/' + ${worker.id}}">
             <button class="btn">Edytuj dane</button>
         </a>
-        <a href="#" th:href="@{'/editDetails/worker/deleteWorker/' + ${worker.id}}" sec:authorize-url="/admin">
+        <a href="#" th:href="@{'/editDetails/worker/deleteWorker/' + ${worker.id}}">
             <button class="btn">Usuń z bazy</button>
         </a>
         <a href="#" th:href="@{'/seeDetails/worker/addedAnimals/' + ${worker.id}}">

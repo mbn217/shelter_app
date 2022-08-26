@@ -25,8 +25,8 @@ public class VerificationToken {
     private Integer id;
     @Column(name = "token")
     private String token;
-    @OneToOne(targetEntity = Worker.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "workers_id")
+    @OneToOne
+    @JoinColumn(name = "workers_id")
     private Worker worker;
     @Column(name = "expiry_date")
     private Date expiryDate;

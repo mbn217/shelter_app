@@ -50,23 +50,25 @@
 </nav>
 
 <div class="container">
-    <div class="row text-center">
-        <div th:if="${#vars['flash.worker.changed']}">
-            <h1 th:text="${#vars['flash.worker.changed']}"></h1>
-        </div>
-        <div class="empty-shelter flash" th:if="${#vars['emptyShelterFlash']}">
-        </div>
-        <div class="col-sm-4" th:each="user : ${allUsers}">
-            <div class="thumbnail eachUser">
-                <p>Użytkownik: <strong th:text="${user.name + ' ' + user.lastName}"></strong></p>
-                <a href="#" th:href="@{'/seeDetails/worker/' + ${user.id}}">
+    <!--    <div class="row text-center">-->
+    <div th:if="${#vars['flash.worker.changed']}">
+        <h1 th:text="${#vars['flash.worker.changed']}"></h1>
+    </div>
+    <div class="empty-shelter flash" th:if="${#vars['emptyShelterFlash']}">
+    </div>
+
+    <div class="row text-center" th:each="worker : ${allWorkers}">
+
+            <div class="thumbnail eachWorker col-md-4">
+                <p>Użytkownik: <strong th:text="${worker.name + ' ' + worker.lastName}"></strong></p>
+                <a href="#" th:href="@{'/seeDetails/worker/' + ${worker.id}}">
                     <button class="btn">Zarządzaj pracownikiem</button>
                 </a>
                 <!--            <a href="#" th:href="@{'/editDetails/animal/' + ${user}}" ><button class="btn">Edytuj dane</button></a>-->
                 <!--            <a href="#" th:href="@{'/deleteAnimal/dog/' + ${user}}"><button class="btn">Usuń z bazy</button></a>-->
             </div>
-        </div>
     </div>
+    <!--    </div>-->
 </div>
 
 <script>
