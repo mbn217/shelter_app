@@ -32,6 +32,7 @@ public class Worker {
     @Email(message = "*Wprowadź poprawny adres")
     @NotEmpty(message = "*Wprowadź poprawny adres")
     private String email;
+
     @Column(name = "worker_password")
     @Length(min = 5, message = "*Hasło musi mieć przynajmniej 5 znaków")
     @NotEmpty(message = "*Wprowadź hasło")

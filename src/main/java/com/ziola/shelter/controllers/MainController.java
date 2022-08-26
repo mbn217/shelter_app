@@ -2,7 +2,7 @@ package com.ziola.shelter.controllers;
 
 import com.ziola.shelter.animals.RandomAnimalsService;
 import com.ziola.shelter.aws.BucketsService;
-import com.ziola.shelter.emails.domain.MessageEntity;
+import com.ziola.shelter.emails.domain.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +26,7 @@ public class MainController {
 
 	@GetMapping
 	public String allAnimals(Model model) {
-		MessageEntity messageEntity = new MessageEntity();
+		Message messageEntity = new Message();
 		if(!bucketsService.checkIfExists("shelteriploadimages")){
 			bucketsService.createBucket("shelteriploadimages");
 		}
