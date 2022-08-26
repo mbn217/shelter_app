@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import java.util.List;
@@ -34,7 +33,7 @@ public class Worker {
     private String email;
 
     @Column(name = "worker_password")
-    @Length(min = 5, message = "*Hasło musi mieć przynajmniej 5 znaków")
+//    @Length(min = 5, message = "*Hasło musi mieć przynajmniej 5 znaków")
     @NotEmpty(message = "*Wprowadź hasło")
     private String password;
     @Column(name = "worker_active")
