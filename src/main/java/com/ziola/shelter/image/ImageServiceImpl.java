@@ -1,7 +1,6 @@
 package com.ziola.shelter.image;
 
 import com.ziola.shelter.animals.Animal;
-import com.ziola.shelter.image.Image;
 import org.springframework.stereotype.Service;
 
 @Service

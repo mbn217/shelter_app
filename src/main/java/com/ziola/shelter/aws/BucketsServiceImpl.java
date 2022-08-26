@@ -3,7 +3,6 @@ package com.ziola.shelter.aws;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.*;
 import com.ziola.shelter.animals.Animal;
-import com.ziola.shelter.aws.BucketsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,7 @@ import java.util.List;
 @Service
 public class BucketsServiceImpl implements BucketsService {
 
-    private AmazonS3 s3client;
+    private final AmazonS3 s3client;
 
     @Autowired
     public BucketsServiceImpl(AmazonS3 s3client) {

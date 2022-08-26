@@ -1,7 +1,7 @@
 package com.ziola.shelter.validation;
 
 import com.ziola.shelter.validation.annotation.PasswordMatches;
-import com.ziola.shelter.workers.dto.WorkerDTO;
+import com.ziola.shelter.workers.WorkerDTO;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

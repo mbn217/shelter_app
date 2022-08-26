@@ -2,7 +2,7 @@ package com.ziola.shelter.controllers;
 
 import com.ziola.shelter.animals.RandomAnimalsService;
 import com.ziola.shelter.aws.BucketsService;
-import com.ziola.shelter.emails.domain.Message;
+import com.ziola.shelter.emails.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

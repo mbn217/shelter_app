@@ -1,10 +1,10 @@
 package com.ziola.shelter.workers.controllers;
 
 import com.ziola.shelter.util.ConvertWorkerDTOEditingEntity;
-import com.ziola.shelter.workers.domain.Worker;
-import com.ziola.shelter.workers.dto.WorkerDTOEditing;
-import com.ziola.shelter.workers.repository.WorkerRepository;
-import com.ziola.shelter.workers.service.WorkerService;
+import com.ziola.shelter.workers.Worker;
+import com.ziola.shelter.workers.WorkerDTOEditing;
+import com.ziola.shelter.workers.WorkerRepository;
+import com.ziola.shelter.workers.WorkerService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

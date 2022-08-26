@@ -1,20 +1,15 @@
 package com.ziola.shelter.workers.controllers;
 
-import com.ziola.shelter.workers.repository.WorkerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ziola.shelter.workers.WorkerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+@RequiredArgsConstructor
 @Controller
 public class ShowingAllWorkersController {
 
-    private WorkerRepository workerRepository;
-
-    @Autowired
-    public ShowingAllWorkersController(WorkerRepository workerRepository) {
-        this.workerRepository = workerRepository;
-    }
+    private final WorkerRepository workerRepository;
 
     @GetMapping("/showAllWorkers")
     public String showAllWorkers(Model model) {

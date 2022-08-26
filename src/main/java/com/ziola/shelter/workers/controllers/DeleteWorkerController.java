@@ -1,6 +1,6 @@
 package com.ziola.shelter.workers.controllers;
 
-import com.ziola.shelter.workers.repository.WorkerRepository;
+import com.ziola.shelter.workers.WorkerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

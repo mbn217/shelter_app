@@ -1,14 +1,14 @@
 package com.ziola.shelter.animals;
 
+import com.ziola.shelter.aws.BucketsService;
+import com.ziola.shelter.emails.SendingEmailToWorkersService;
 import com.ziola.shelter.image.Image;
 import com.ziola.shelter.image.ImageRepository;
-import com.ziola.shelter.aws.BucketsService;
 import com.ziola.shelter.image.ImageServiceImpl;
-import com.ziola.shelter.emails.service.SendingEmailToWorkersService;
 import com.ziola.shelter.util.ConverterDtoAnimalEntity;
 import com.ziola.shelter.util.ConvertingMultipartToFile;
-import com.ziola.shelter.workers.domain.Worker;
-import com.ziola.shelter.workers.repository.WorkerRepository;
+import com.ziola.shelter.workers.Worker;
+import com.ziola.shelter.workers.WorkerRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.task.TaskExecutor;

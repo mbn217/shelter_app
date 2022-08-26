@@ -2,7 +2,7 @@ package com.ziola.shelter.animals;
 
 
 import com.ziola.shelter.image.Image;
-import com.ziola.shelter.workers.domain.Worker;
+import com.ziola.shelter.workers.Worker;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;

@@ -1,7 +1,7 @@
 package com.ziola.shelter.util;
 
-import com.ziola.shelter.workers.domain.Worker;
-import com.ziola.shelter.workers.dto.WorkerDTOEditing;
+import com.ziola.shelter.workers.Worker;
+import com.ziola.shelter.workers.WorkerDTOEditing;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

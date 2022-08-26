@@ -1,7 +1,7 @@
 package com.ziola.shelter.workers.controllers;
 
-import com.ziola.shelter.workers.domain.Worker;
-import com.ziola.shelter.workers.service.AddingWorkerService;
+import com.ziola.shelter.workers.AddingWorkerService;
+import com.ziola.shelter.workers.Worker;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
