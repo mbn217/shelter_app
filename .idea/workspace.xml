@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="few big improvements">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerService.java" afterDir="false" />
+    <list default="true" id="f87c95b9-1fdf-4461-b2ad-49f37c55642d" name="Changes" comment="made better controller worker">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/EmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/EmailValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatchesValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/annotation/PasswordMatches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/PasswordMatches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/annotation/ValidEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/validation/ValidEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerDTOEditing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerDTOEditing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/WorkerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ziola/shelter/workers/controllers/EditingWorkerController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +200,7 @@
       <workItem from="1661535792150" duration="3242000" />
       <workItem from="1661539070559" duration="3750000" />
       <workItem from="1661544026074" duration="11256000" />
-      <workItem from="1661582951684" duration="488000" />
+      <workItem from="1661582951684" duration="927000" />
     </task>
     <task id="LOCAL-00004" summary="changed of organization of animal package">
       <created>1661502042479</created>
@@ -235,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661555012831</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="made better controller worker">
+      <created>1661583480552</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661583480552</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +299,8 @@
     <MESSAGE value="removed WebSecurityConfigurerAdapter" />
     <MESSAGE value="cleanedup services and controllers" />
     <MESSAGE value="few big improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="few big improvements" />
+    <MESSAGE value="made better controller worker" />
+    <option name="LAST_COMMIT_MESSAGE" value="made better controller worker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

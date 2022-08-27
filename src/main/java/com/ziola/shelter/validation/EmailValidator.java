@@ -1,7 +1,5 @@
 package com.ziola.shelter.validation;
 
-import com.ziola.shelter.validation.annotation.ValidEmail;
-
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.regex.Matcher;

@@ -1,7 +1,8 @@
 package com.ziola.shelter.workers;
 
 import com.ziola.shelter.role.Role;
-import com.ziola.shelter.validation.annotation.PasswordMatches;
+import com.ziola.shelter.validation.PasswordMatches;
+import com.ziola.shelter.validation.ValidEmail;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -21,6 +22,7 @@ public class WorkerDTO {
     @NotNull(message = "{worker.domain.null.error}")
     @NotEmpty(message = "{worker.domain.null.error}")
     @Email(message = "*Wprowadź poprawny adres", regexp = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$")
+    @ValidEmail
     private String email;
     @NotNull(message = "{worker.domain.null.error}")
     @NotEmpty(message = "{worker.domain.null.error}")

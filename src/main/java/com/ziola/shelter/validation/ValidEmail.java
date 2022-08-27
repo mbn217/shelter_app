@@ -1,4 +1,4 @@
-package com.ziola.shelter.validation.annotation;
+package com.ziola.shelter.validation;
 
 
 import com.ziola.shelter.validation.EmailValidator;
