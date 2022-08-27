@@ -73,4 +73,21 @@ public class WorkerController {
         model.addAttribute("allAnimals", allAnimalsDto);
         return "showAllAnimals";
     }
+
+    @GetMapping("/editDetails/worker/{id}")
+    public String goToEditWorkerSite(@PathVariable("id") int workerId, Model model) {
+        WorkerDTOEditing workerDTOEditing = workerService.findByIdAndConvertToDTO(workerId);
+        model.addAttribute("worker", workerDTOEditing);
+        return "editWorker";
+    }
+
+    @PostMapping("/editDetails/worker/processEditWorker")
+    public String processEditWorker(@Valid @ModelAttribute("worker") WorkerDTOEditing editedWorker, BindingResult result, RedirectAttributes redirectAttributes){
+        if (result.hasErrors()) {
+            return "editWorker";
+        }
+        workerService.findByIdAndCreateAndSaveWorker(editedWorker);
+        redirectAttributes.addFlashAttribute("flash.worker.changed", "Dane pracownika zostały zaktualizowane");
+        return "redirect:/admin/home";
+    }
 }

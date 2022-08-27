@@ -78,14 +78,29 @@ public class WorkerServiceImpl implements WorkerService {
         Worker workerFound = workerRepository.findById(workerId);
         return converterDtoWorkerEntity.convertToDto(workerFound);
     }
+    
+    @Override
+    public void findByIdAndCreateAndSaveWorker(WorkerDTOEditing editedWorker) {
+        int workerId = editedWorker.getId();
+        Worker worker = workerRepository.findById(workerId);
+        worker.setName(editedWorker.getName());
+        worker.setLastName(editedWorker.getLastName());
+        worker.setEmail(editedWorker.getEmail());
+        worker.setActive(editedWorker.isActive());
+        checkWhichRoleAndSave(editedWorker, worker);
+    }
 
     private boolean emailExists(String email) {
         Worker worker = workerRepository.findByEmail(email);
         return worker != null;
     }
 
-
     private String setEncodePasswordNewWorker(WorkerDTO workerDTO) {
         return bCryptPasswordEncoder.encode(workerDTO.getPassword());
+    }
+
+    private void checkWhichRoleAndSave(WorkerDTOEditing editedWorker, Worker worker) {
+        if (editedWorker.getIsAdmin() == 1) saveWorker(worker, "ADMIN");
+        else saveWorker(worker, "USER");
     }
 }

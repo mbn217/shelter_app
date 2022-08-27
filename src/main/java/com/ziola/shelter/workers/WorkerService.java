@@ -19,4 +19,6 @@ public interface WorkerService {
     Object findAll();
 
     WorkerDTOEditing findByIdAndConvertToDTO(int workerId);
+
+    void findByIdAndCreateAndSaveWorker(WorkerDTOEditing editedWorker);
 }
